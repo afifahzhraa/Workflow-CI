@@ -15,8 +15,8 @@ flavors:
     sklearn_version: 1.8.0
 mlflow_version: 2.19.0
 model_size_bytes: 1381707
-model_uuid: 802ee7e7e79c4cfd99de2a044dd4a275
-run_id: 5abbddb0bacd46b5a1b7462620fbbb4b
+model_uuid: dd34b6a224374e838341c2ad1dc81352
+run_id: 635e604fce104db5902d62b4035ce9bc
 signature:
   inputs: '[{"type": "double", "name": "Pregnancies", "required": true}, {"type":
     "double", "name": "Glucose", "required": true}, {"type": "double", "name": "BloodPressure",
@@ -26,4 +26,4 @@ signature:
     "required": true}, {"type": "double", "name": "Age", "required": true}]'
   outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
   params: null
-utc_time_created: '2025-12-18 13:16:16.496287'
+utc_time_created: '2025-12-18 13:50:25.133422'
