@@ -3,9 +3,12 @@ name: CI-MLflow
 on:
   push:
     branches: ["main"]
-
+    
+permissions:
+  contents: write
+  
 jobs:
-  train-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
