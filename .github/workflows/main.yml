@@ -22,20 +22,20 @@ jobs:
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 pandas scikit-learn joblib
 
-    - name: Run training
+    - name: Run MLflow Project
       run: |
-        python modelling.py
-
+        mlflow run MLProject --env-manager=local
+        
     - name: Get latest MLflow run_id
       run: |
-        RUN_ID=$(ls -td mlruns/0/*/ | head -n 1 | cut -d'/' -f3)
+        RUN_ID=$(ls -td MLProject/mlruns/0/*/ | head -n 1 | cut -d'/' -f4)
         echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
         echo "Latest run_id: $RUN_ID"
 
     - name: Upload model artifact to GitHub
       run: |
         mkdir -p artifacts
-        cp -r mlruns/0/${{ env.RUN_ID }}/artifacts artifacts/
+        cp -r MLProject/mlruns/0/${{ env.RUN_ID }}/artifacts artifacts/
 
     - name: Commit model artifact
       run: |
