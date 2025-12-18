@@ -4,8 +4,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("Diabetes Classification")
+# mlflow.set_tracking_uri("http://127.0.0.1:5000")
+# mlflow.set_experiment("Diabetes Classification")
 
 df = pd.read_csv("diabetes_preprocessing/diabetes_clean.csv")
 
