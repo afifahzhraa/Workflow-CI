@@ -28,14 +28,14 @@ jobs:
         
     - name: Get latest MLflow run_id
       run: |
-        RUN_ID=$(ls -td MLProject/mlruns/0/*/ | head -n 1 | cut -d'/' -f4)
+        RUN_ID=$(ls -td mlruns/0/* | head -n 1 | xargs basename)
         echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
         echo "Latest run_id: $RUN_ID"
 
     - name: Upload model artifact to GitHub
       run: |
         mkdir -p artifacts
-        cp -r MLProject/mlruns/0/${{ env.RUN_ID }}/artifacts artifacts/
+        cp -r mlruns/0/${{ env.RUN_ID }}/artifacts artifacts/
 
     - name: Commit model artifact
       run: |
